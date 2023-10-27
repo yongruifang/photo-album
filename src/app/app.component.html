@@ -13,8 +13,8 @@
   <!-- 使用#drawer，赋值一个抽屉ID -->
   <!-- 稍后使用这个#drawer可以触发抽屉的[opened]变化 -->
   <!-- [opened]是属性绑定 -->
-  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [opened]="false">
-    <mat-toolbar>Menu</mat-toolbar>
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [opened]="false" mode="side">
+    <mat-toolbar>选项</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item (click)="ImportImage()">导入图片</a>
     </mat-nav-list>
@@ -22,11 +22,11 @@
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-        <mat-icon aria-label="Side nav toggle icon">选项</mat-icon>
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>我的相簿</span>
     </mat-toolbar>
-    <pa-page-body (click)="closeDrawer()"></pa-page-body>
+    <pa-page-body></pa-page-body>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

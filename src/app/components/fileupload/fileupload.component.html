@@ -1,19 +1,23 @@
 <h2 mat-dialog-title>Choose image</h2>
 <mat-dialog-content>
     <h3 *ngIf="message">{{message}}</h3>
-    <button class="mat-raised-button mat-accent" md-button (click)="fileUpload.click()">Upload</button>
+    <button mat-raised-button class="mat-accent" md-button (click)="fileUpload.click()">Upload</button>
     <input hidden #fileUpload type="file" accept="image/*" (change)="OnImageSelected(fileUpload.files)" />
     <div>
         <img src="{{imageSource.Image}}" height="100" *ngIf="imageSource" />
     </div>
-    <mat-form-field>
-        <input type="text" matInput placeholder="Add tags" [(ngModel)]="tags" />
-    </mat-form-field>
-    <mat-form-field>
-        <input matInput placeholder="Description" [(ngModel)]="description" />
-    </mat-form-field>
+    <p>
+        <mat-form-field appearance="outline">
+            <input type="text" matInput placeholder="Add tags" [(ngModel)]="tags" />
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <input matInput placeholder="Description" [(ngModel)]="description" />
+        </mat-form-field>
+    </p>
 </mat-dialog-content>
 <mat-dialog-actions>
-    <button class="mat-raised-button mat-primary" (click)="Save()" *ngIf="imageSource?.Image">Save</button>
-    <button class="mat-raised-button" mat-dialog-close>Cancel</button>
+    <button mat-raised-button class="mat-primary" (click)="Save()" *ngIf="imageSource?.Image">Save</button>
+    <button mat-raised-button mat-dialog-close>Cancel</button>
 </mat-dialog-actions>

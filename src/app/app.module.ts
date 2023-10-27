@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from '@angular/cdk/layout'
 import { FormsModule } from '@angular/forms'
 import { MatInputModule } from '@angular/material/input';
@@ -28,6 +29,7 @@ import { PageBodyComponent } from './components/page-body/page-body.component';
   ],
   // 需要在应用程序中导入哪些外部模块
   imports: [
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,

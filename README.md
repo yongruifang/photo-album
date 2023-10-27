@@ -70,3 +70,7 @@ Server目录的主线任务 [记录](server/Readme.md)
 我们将创建服务来满足这两个需求，
 核心问题：在做出反应之后，订阅者需要做什么。
 我们创建一个简单的基类。
+
+# 传输数据
+`ng g service services/TransferData`
+

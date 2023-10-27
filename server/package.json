@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "tsc && node dist/PhotoAlbumServer.js",
-    "build": "tsc"
+    "build": "tsc && node dist/PhotoAlbumServer.js"
   },
   "keywords": [],
   "author": "",

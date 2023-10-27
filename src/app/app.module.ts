@@ -17,12 +17,14 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatListModule } from '@angular/material/list'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FileuploadComponent } from './components/fileupload/fileupload.component';
+import { PageBodyComponent } from './components/page-body/page-body.component';
 @NgModule({
   // 告诉Angular我们开发了哪些组件
   // 当使用Angular CLI来生成组件时，组件的声明自动添加到了这个数组中
   declarations: [
     AppComponent,
-    FileuploadComponent
+    FileuploadComponent,
+    PageBodyComponent
   ],
   // 需要在应用程序中导入哪些外部模块
   imports: [

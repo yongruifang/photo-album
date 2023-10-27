@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FilePreviewServiceService as FilePreviewService } from 'src/app/Services/file-preview-service.service';
+import { FilePreviewServiceService as FilePreviewService } from 'src/app/services/file-preview-service.service';
 import { IPictureModel, PictureModel } from 'src/app/types';
 import { MatDialogRef } from '@angular/material/dialog';
 // @Component装饰器用来为该组件指定Angular所需的元数据

@@ -53,32 +53,20 @@ ng add @angular/material @angular/cdk @angular/animation @angular/flex-layout
 # 存档点1
 ![存档点1](src/assets/ui-arch1.png)
 
-以下是Server目录的主线任务
+Server目录的主线任务 [记录](server/Readme.md)
 
----
+# 显示图片
 
+- 应用程序如何知道IPictureModel的实例什么时候可以用。
+使用RxJS监视图片。（JS反应式扩展）
+所谓的观察者模式。
+通过RxJS，不再与事件耦合，可以使用RxJS创建复杂的订阅机制。
+控制我们反应的通知数量。或者只订阅满足特定条件的数据和变化。
 
-# 引入对Express的支持
-Express是一个中间件框架
+需要对应用程序的两个动作做出反应，
+1. 当页面加载时，从服务器加载图片，需要对加载每张图片的行为做出反应。
+2. 当用户在对话框中选择一张图片并选择Save时，对话框关闭，同时我们触发保存到数据库的操作，并在页面上显示该图片。
 
-# 跨域请求共享
-Cross Origin Request Sharing
-启用CORS时，让已知的外部位置能够访问我们网站上的受限操作。
-站点不同，需要启用CORS来允许提交请求。
-否则从Angular发出请求给Express，并不会返回任何东西。
-首先，在Express项目中添加cors中间件。
-`npm install cors @types/cors --save`
-添加CORS支持
-
-# 把请求 路由到 合适的请求处理程序
-## 提供路由支持
-
-# 使用MongoDB, 流行的Mongoose包
-`npm install mongoose @types/mongoose --save-dev`
-
-创建schema, 代表要保存到数据库中的对象。
-
-Server类写代码 关联 路由和数据库
-扩展构造函数
-将Server改写为一个抽象类，添加一个AddRouting方法。
-阻止任何人直接实例化服务器。 
+我们将创建服务来满足这两个需求，
+核心问题：在做出反应之后，订阅者需要做什么。
+我们创建一个简单的基类。

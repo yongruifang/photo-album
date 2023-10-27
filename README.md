@@ -53,6 +53,11 @@ ng add @angular/material @angular/cdk @angular/animation @angular/flex-layout
 # 存档点1
 ![存档点1](src/assets/ui-arch1.png)
 
+以下是Server目录的主线任务
+
+---
+
+
 # 引入对Express的支持
 Express是一个中间件框架
 
@@ -67,3 +72,8 @@ Cross Origin Request Sharing
 
 # 把请求 路由到 合适的请求处理程序
 ## 提供路由支持
+
+# 使用MongoDB, 流行的Mongoose包
+`npm install mongoose @types/mongoose --save-dev`
+
+创建schema, 代表要保存到数据库中的对象。

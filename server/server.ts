@@ -1,24 +1,33 @@
 import express from "express";
 import cors from "cors";
+import bodyParser from "body-parser";
+import { Mongo } from "./Database";
+import { RoutingEngine } from "./Routing/RoutingEngine";
 
-export class Server {
-    constructor(private port: number = 3000, private app: any = express()) {
+export abstract class Server {
+    private router: any;
 
+    constructor(private port: number = 3000, private app: any = express(), private mongo: Mongo = new Mongo(), private routingEngine: RoutingEngine = new RoutingEngine()) {
     }
+
     public WithCorsSupport(): Server {
         this.app.use(cors());
         return this;
     }
-    protected OnStart(): void {
-        this.app.get(`/`, (request: any, response: any) => response.send(`Hello from the express`))
-    }
+
+    protected abstract AddRouting(routingEngine: RoutingEngine, router: any): void;
+
     public Start(): void {
-        // 因为图片可能占据很大空间，默认情况的请求体解析器上限100KB，提高为100MB
-        this.app.use(express.json({ limit: "100mb" }));
-        this.app.use(express.urlencoded({ limit: "100mb", extended: true }));
+        this.app.use(bodyParser.json({ limit: `100mb` }));
+        this.app.use(bodyParser.urlencoded({ limit: `100mb`, extended: true }));
+        this.mongo.Connect();
+        this.router = express.Router();
+        this.AddRouting(this.routingEngine, this.router);
+        this.app.use(this.router);
         this.OnStart();
-        this.app.listen(this.port, () => console.log(`Server is running on port ${this.port}`));
+        this.app.listen(this.port, () => console.log(`Express server running on port ${this.port}`));
+    }
+
+    protected OnStart(): void {
     }
 }
-
-new Server(3000).Start()

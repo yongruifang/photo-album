@@ -77,3 +77,8 @@ Cross Origin Request Sharing
 `npm install mongoose @types/mongoose --save-dev`
 
 创建schema, 代表要保存到数据库中的对象。
+
+Server类写代码 关联 路由和数据库
+扩展构造函数
+将Server改写为一个抽象类，添加一个AddRouting方法。
+阻止任何人直接实例化服务器。 

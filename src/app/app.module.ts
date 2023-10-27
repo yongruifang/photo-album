@@ -19,6 +19,8 @@ import { MatListModule } from '@angular/material/list'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FileuploadComponent } from './components/fileupload/fileupload.component';
 import { PageBodyComponent } from './components/page-body/page-body.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 @NgModule({
   // 告诉Angular我们开发了哪些组件
   // 当使用Angular CLI来生成组件时，组件的声明自动添加到了这个数组中
@@ -44,6 +46,7 @@ import { PageBodyComponent } from './components/page-body/page-body.component';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

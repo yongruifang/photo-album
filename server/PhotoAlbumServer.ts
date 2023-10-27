@@ -11,4 +11,4 @@ export class PhotoAlbumServer extends Server {
     }
 }
 
-new PhotoAlbumServer(3000).WithCorsSupport().Start();
+new PhotoAlbumServer(80).WithCorsSupport().Start();

@@ -14,21 +14,22 @@
   <!-- 稍后使用这个#drawer可以触发抽屉的[opened]变化 -->
   <!-- [opened]是属性绑定 -->
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [opened]="false">
-
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item (click)="ImportImage()">Import Image</a>
+    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Advanced TypeScript</span>
+    </mat-toolbar>
   </mat-sidenav-content>
 </mat-sidenav-container>
-<!-- 用于显示边栏导航 -->
-<mat-toolbar color="primary">
-  <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-  </button>
-</mat-toolbar>
-<mat-nav-list>
-  <a mat-list-item>Import Image</a>
-</mat-nav-list>
+
+
 
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

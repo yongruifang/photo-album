@@ -42,3 +42,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ng add @angular/material @angular/cdk @angular/animation @angular/flex-layout
 ```
 
+# 创建FileUpload组件
+`ng generate component components/fileupload`
+创建了四个文件 *.html, *.scss, *.spec.ts, *.ts
+创建服务，服务就是一个类，它使用@Injectable装饰器
+我们将创建一个服务，使其读入一个使用文件选择器选择的文件，
+从而能够在图片上传对话框和主屏幕上显示该文件，或者将其传输并保存到数据库。
+`ng generate service Services/FilePreviewService`

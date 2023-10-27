@@ -74,3 +74,8 @@ Server目录的主线任务 [记录](server/Readme.md)
 # 传输数据
 `ng g service services/TransferData`
 
+# 显示对话框
+配置对话框，使其行为符合一定要求
+- 不希望通过Esc键自动关闭
+- 让对话框自动获取焦点
+- 宽度500px

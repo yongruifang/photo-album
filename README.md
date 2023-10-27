@@ -49,3 +49,6 @@ ng add @angular/material @angular/cdk @angular/animation @angular/flex-layout
 我们将创建一个服务，使其读入一个使用文件选择器选择的文件，
 从而能够在图片上传对话框和主屏幕上显示该文件，或者将其传输并保存到数据库。
 `ng generate service Services/FilePreviewService`
+
+# 存档点1
+![存档点1](src/assets/ui-arch1.png)

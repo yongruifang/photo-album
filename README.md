@@ -52,3 +52,15 @@ ng add @angular/material @angular/cdk @angular/animation @angular/flex-layout
 
 # 存档点1
 ![存档点1](src/assets/ui-arch1.png)
+
+# 引入对Express的支持
+Express是一个中间件框架
+
+# 跨域请求共享
+Cross Origin Request Sharing
+启用CORS时，让已知的外部位置能够访问我们网站上的受限操作。
+站点不同，需要启用CORS来允许提交请求。
+否则从Angular发出请求给Express，并不会返回任何东西。
+首先，在Express项目中添加cors中间件。
+`npm install cors @types/cors --save`
+添加CORS支持

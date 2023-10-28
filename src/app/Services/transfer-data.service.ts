@@ -25,9 +25,9 @@ export class TransferDataService {
         'Content-Type': 'application/text',
       })
     };
-    this.client.get<string[]>('http://localhost:3000/get/', httpOptions).subscribe(pic => {
+    this.client.get<string[]>(`http://localhost:8888/.netlify/functions/pictures/get/`, httpOptions).subscribe(pic => {
       pic.forEach(img => {
-        this.client.get<IPictureModel>('http://localhost:3000/id/' + img).subscribe(pic1 => {
+        this.client.get<IPictureModel>('http://localhost:8888/.netlify/functions/pictures/id/' + img).subscribe(pic1 => {
           if (pic1 !== null) {
             this.loadImage.add(pic1);
           }
@@ -46,7 +46,7 @@ export class TransferDataService {
       if (message === null) {
         return;
       }
-      this.client.post<IPictureModel>('http://localhost:3000/add/', message, httpOptions).subscribe(callback => {
+      this.client.post<IPictureModel>('http://localhost:8888/.netlify/functions/pictures/add/', message, httpOptions).subscribe(callback => {
       });
     });
   }

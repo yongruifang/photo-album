@@ -79,3 +79,14 @@ Server目录的主线任务 [记录](server/Readme.md)
 - 不希望通过Esc键自动关闭
 - 让对话框自动获取焦点
 - 宽度500px
+
+
+---
+
+# 部署Express到Netlify
+## Use Express with a frontend app - 实现Serverless function
+`npm i express serverless-http @netlify/functions @types/express`
+> 我选择到server目录，Use Express without a frontend
+
+# Environment Variables using dotenv
+`npm install dotenv`

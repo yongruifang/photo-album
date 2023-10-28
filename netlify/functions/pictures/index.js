@@ -22,8 +22,13 @@ app.use(function (req, res, next) {
 });
 app.use(bodyParser.json({ limit: `100mb` }))
 app.use(bodyParser.urlencoded({ limit: `100mb`, extended: true }));
-
-app.use('/.netlify/functions/pictures', router)
+router.all('*', function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
 app.use(cors())
+app.use('/.netlify/functions/pictures', router)
 
 module.exports.handler = serverless(app)

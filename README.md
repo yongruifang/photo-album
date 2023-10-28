@@ -90,3 +90,10 @@ Server目录的主线任务 [记录](server/Readme.md)
 
 # Environment Variables using dotenv
 `npm install dotenv`
+
+Add @ngx-env/builder so we can get process.env support in Angular.
+```bash
+npx @angular/cli add @ngx-env/builder
+npx @angular/cli generate environments
+```
+Edit src/app/app.component.ts to include the environment variable NG_APP_HELLO.

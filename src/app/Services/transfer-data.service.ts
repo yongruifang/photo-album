@@ -25,9 +25,10 @@ export class TransferDataService {
         'Content-Type': 'application/text',
       })
     };
-    this.client.get<string[]>(`http://localhost:8888/.netlify/functions/pictures/get/`, httpOptions).subscribe(pic => {
+    const url = 'https://gleaming-dodol-6cab2b.netlify.app'
+    this.client.get<string[]>(`${url}/.netlify/functions/pictures/get/`, httpOptions).subscribe(pic => {
       pic.forEach(img => {
-        this.client.get<IPictureModel>('http://localhost:8888/.netlify/functions/pictures/id/' + img).subscribe(pic1 => {
+        this.client.get<IPictureModel>(`${url}/.netlify/functions/pictures/id/` + img).subscribe(pic1 => {
           if (pic1 !== null) {
             this.loadImage.add(pic1);
           }

@@ -97,3 +97,7 @@ npx @angular/cli add @ngx-env/builder
 npx @angular/cli generate environments
 ```
 Edit src/app/app.component.ts to include the environment variable NG_APP_HELLO.
+
+# 预览网址
+[上线到Netlify](https://splendid-macaron-90c7e6.netlify.app/)
+![界面](src/assets/ui-deploy.png)

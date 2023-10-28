@@ -1,6 +1,7 @@
 const express = require('express')
 const serverless = require('serverless-http')
 const router = require('./router');
+const cors = require('cors');
 import bodyParser from "body-parser";
 
 require('dotenv').config();
@@ -23,5 +24,6 @@ app.use(bodyParser.json({ limit: `100mb` }))
 app.use(bodyParser.urlencoded({ limit: `100mb`, extended: true }));
 
 app.use('/.netlify/functions/pictures', router)
+app.use(cors())
 
 module.exports.handler = serverless(app)

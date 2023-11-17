@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AddImageService } from 'src/app/services/add-image.service';
-import { IPictureModel } from 'src/app/types';
-import { TransferDataService } from 'src/app/services/transfer-data.service';
-import { LoadImageService } from 'src/app/services/load-image.service';
+import { AddImageService } from '../../services/add-image.service';
+import { IPictureModel } from '../../types';
+import { TransferDataService } from '../../services/transfer-data.service';
+import { LoadImageService } from '../../services/load-image.service';
 
 @Component({
   selector: 'pa-page-body',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FilePreviewServiceService as FilePreviewService } from 'src/app/services/file-preview-service.service';
-import { IPictureModel, PictureModel } from 'src/app/types';
+import { FilePreviewServiceService as FilePreviewService } from '../../services/file-preview-service.service';
+import { IPictureModel, PictureModel } from '../../types';
 import { MatDialogRef } from '@angular/material/dialog';
 // @Component装饰器用来为该组件指定Angular所需的元数据
 // 当我们想要在HTML中使用这个组件实例时，使用pa-fileupload标签

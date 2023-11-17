@@ -5,7 +5,7 @@ import { IPictureModel } from '../types';
 import { LoadImageService } from './load-image.service';
 //这个服务将用到三个实例
 // 1. HttpClient 管理get和post操作
-
+const ENDPOINT = 'https://splendid-macaron-90c7e6.netlify.app';
 @Injectable({
   providedIn: 'root'
 })
@@ -19,13 +19,14 @@ export class TransferDataService {
     this.LoadImagesWithSubscription();
   }
 
+
   private LoadImagesWithSubscription() {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/text',
       })
     };
-    const endpoint = 'https://resilient-bienenstitch-d84d76.netlify.app/.netlify/functions/pictures'
+    const endpoint = `${ENDPOINT}/.netlify/functions/pictures`;
     this.client.get<string[]>(`${endpoint}/get/`, httpOptions).subscribe(pic => {
       pic.forEach(img => {
         this.client.get<IPictureModel>(`${endpoint}/id/` + img).subscribe(pic1 => {
@@ -47,7 +48,7 @@ export class TransferDataService {
       if (message === null) {
         return;
       }
-      this.client.post<IPictureModel>('http://localhost:8888/.netlify/functions/pictures/add/', message, httpOptions).subscribe(callback => {
+      this.client.post<IPictureModel>(`${ENDPOINT}/.netlify/functions/pictures/add/`, message, httpOptions).subscribe(callback => {
       });
     });
   }

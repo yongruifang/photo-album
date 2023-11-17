@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FileuploadComponent } from './components/fileupload/fileupload.component';
 import { PageBodyComponent } from './components/page-body/page-body.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 
 @NgModule({
   // 告诉Angular我们开发了哪些组件
@@ -44,6 +45,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatDialogModule,
     MatCardModule,
     MatFormFieldModule,
+    MatProgressSpinnerModule,
     MatInputModule,
     FormsModule,
     FlexLayoutModule,

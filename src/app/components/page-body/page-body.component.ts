@@ -16,6 +16,7 @@ export class PageBodyComponent implements OnInit {
     this.Pictures = new Array<IPictureModel>();
   }
 
+  onload = false;
   ngOnInit() {
     this.transfer.Initialize();
     this.addImage.context.subscribe(message => {
@@ -26,9 +27,11 @@ export class PageBodyComponent implements OnInit {
     });
     this.loadImage.context.subscribe(message => {
       if (!message) {
+        this.onload = true;
         return;
       }
       this.Pictures.push(message);
+      this.onload = true;
     });
   }
 }

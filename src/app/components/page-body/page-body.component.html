@@ -1,5 +1,4 @@
-<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="1%" fxLayoutAlign="left" id="page-body">
-    <!-- if onload is false,  -->
+<!-- <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="1%" fxLayoutAlign="left" id="page-body">
     <div *ngIf="!onload">
         <mat-spinner></mat-spinner>
     </div>
@@ -10,5 +9,16 @@
         <img mat-card-image [src]="picture.Image" class="card-image" />
         <p>{{picture.Description.length > 10? picture.Description.substring(0,10)+'...' : picture.Description}}
         </p>
+    </mat-card>
+</div> -->
+
+<div class="card-list" id="page-body">
+    <div *ngIf="!onload">
+        <mat-spinner></mat-spinner>
+    </div>
+    <mat-card class="picture-card" *ngFor="let picture of Pictures">
+        <img mat-card-image [src]="picture.Image" class="card-image" />
+        <mat-card-title class="card-title">{{picture.Tags}}</mat-card-title>
+        <p class="card-desc">{{picture.Description}}</p>
     </mat-card>
 </div>

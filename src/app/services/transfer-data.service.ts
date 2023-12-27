@@ -5,7 +5,7 @@ import { IPictureModel } from '../types';
 import { LoadImageService } from './load-image.service';
 //这个服务将用到三个实例
 // 1. HttpClient 管理get和post操作
-const ENDPOINT = 'https://splendid-macaron-90c7e6.netlify.app';
+const ENDPOINT = 'https://album-waterfall.netlify.app';
 @Injectable({
   providedIn: 'root'
 })
